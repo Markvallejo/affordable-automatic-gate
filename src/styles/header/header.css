@@ -34,6 +34,7 @@
 .hamburger-button--container {
   height: auto;
   width: 30px;
+  transition: transform 0.3s ease-in-out;
 }
 .hamburger-button--container button {
   background-color: transparent;
@@ -56,7 +57,11 @@
     font-size: 24px;
   }
 }
-
+@media screen and (min-width: 1024px) {
+  .hamburger-button--container:hover {
+    transform: scale(1.1);
+  }
+}
 @media screen and (min-width: 1360px) {
   .header-container {
     max-width: 1280px;
