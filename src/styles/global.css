@@ -1,0 +1,29 @@
+
+@font-face {
+  font-family: 'KanturuyPro';
+  src: url('/fonts/KanturuyPro-Regular.ttf') format('ttf'),
+        url('/fonts/KanturuyPro-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KanturuyPro';
+  src: url('/fonts/KanturuyPro-Medium.ttf') format('ttf'),
+        url('/fonts/KanturuyPro-Medium.ttf') format('ttf');
+  font-weight: medium;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: 'KanturuyPro';
+  src: url('/fonts/KanturuyPro-Bold.ttf') format('ttf'),
+        url('/fonts/KanturuyPro-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+  body {
+    font-family: 'KanturuyPro', sans-serif;
+  }
+  
