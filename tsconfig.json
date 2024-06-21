@@ -1,3 +1,30 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/base", // Extiende de la configuración base de Astro, que es menos estricta que la estricta.
+  "compilerOptions": {
+    "target": "ESNext", // Utiliza la última versión de ECMAScript.
+    "module": "ESNext", // Utiliza la última versión de los módulos ECMAScript.
+    "moduleResolution": "node", // Utiliza la resolución de módulos estilo Node.js.
+    "resolveJsonModule": true, // Permite la importación de módulos JSON.
+    "strict": true, // Habilita todas las opciones estrictas.
+    "strictNullChecks": true, // Verifica estrictamente los nulos.
+    "esModuleInterop": true, // Permite la interoperabilidad de módulos ES con módulos CommonJS.
+    "allowSyntheticDefaultImports": true, // Permite importaciones predeterminadas sintéticas para módulos sin exportación predeterminada.
+    "skipLibCheck": true, // Omite la verificación de tipos en archivos de declaración.
+    "forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivo sean consistentes en cuanto a mayúsculas y minúsculas.
+    "jsx": "react-jsx", // Asume la sintaxis JSX de React.
+    "isolatedModules": true, // Asegura que cada archivo se pueda transpilar de forma independiente.
+    "baseUrl": ".", // Establece la base para los alias de importación.
+    "paths": {
+      "@/*": ["./src/*"] // Define un alias "@" para los imports desde la carpeta src.
+    },
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Incluye librerías para DOM y características de ECMAScript más recientes.
+    "noEmit": true, // No emite archivos de salida (TypeScript solo se usa para el chequeo de tipos).
+    "typeRoots": [
+      "./node_modules/@types", // Incluye tipos de DefinitelyTyped.
+      "./src/types" // Incluye tus propios tipos definidos en la carpeta src/types.
+    ],
+    "jsxImportSource": "react", // Especifica la fuente de importación para el transformador JSX.
+    "allowJs": false // No permite archivos JavaScript, solo TypeScript.
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "env.d.ts"] // Incluye archivos TypeScript, Astro y declaraciones de tipo.
 }
