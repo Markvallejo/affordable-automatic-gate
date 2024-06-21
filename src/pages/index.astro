@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { AppConfig } from '../helpers/AppConfig';
+import Cover from '@/components/cover/cover';
 const { title, description } = AppConfig;
 ---
 
 <Layout {...{ title, description }}>
-	<h1>Welcome to <span class="text-gradient">Affordable Automatic Gate</span></h1>
+	<Cover client:only="react"/>
 </Layout>
 

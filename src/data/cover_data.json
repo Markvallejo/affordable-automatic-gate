@@ -1,0 +1,22 @@
+[
+  {
+    "src": "/assets/cover/home_slider_01.jpg",
+    "alt": "slide 1"
+  },
+  {
+    "src": "/assets/cover/home_slider_02.jpg",
+    "alt": "slide 2"
+  },
+  {
+    "src": "/assets/cover/home_slider_03.jpg",
+    "alt": "slide 3"
+  },
+  {
+    "src": "/assets/cover/home_slider_04.jpg",
+    "alt": "slide 4"
+  },
+  {
+    "src": "/assets/cover/home_slider_05.jpg",
+    "alt": "slide 5"
+  }
+]
