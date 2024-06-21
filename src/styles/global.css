@@ -24,11 +24,11 @@
 }
   
 :root {
-  --color-text: #FFFFFF;
+  --color-white: #FFFFFF;
   --color-black: #000000;
 }
 body {
-  color: var(--text-color);
+  color: var(--color-black);
   font-family: 'KantumruyPro', sans-serif;
   font-size: 16px;
   font-weight: 400;
