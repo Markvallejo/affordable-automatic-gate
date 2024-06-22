@@ -1,0 +1,107 @@
+.styles-gates__container {
+  margin-top: 30px;
+  padding: 0 20px;
+  margin-bottom: 90px;
+}
+.styles-gates__top {
+  margin-bottom: 60px;
+}
+.styles-gates__image-title-container {
+  align-items: center;
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.styles-gates__image-container {
+  width: 100px;
+  height: auto;
+}
+.styles-gates__image-container img {
+  width: 100%;
+  height: auto;
+}
+.styles-gates__title-container {
+  text-align: right;
+  width: 100%;
+}
+.styles-gates__title-container h2  {
+  font-weight: 500;
+  font-size: 40px;
+}
+.styles-gates__title-container h2 strong {
+  font-weight: 700;
+}
+.styles-gates__description {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  text-align: right;
+}
+.styles-gates__grid-cards {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.styles-gates__grid-cards > :nth-child(2n) {
+  transform: translateY(40px);
+}
+
+@media screen and (min-width: 768px) {
+  .styles-gates__container {
+    margin-top: 80px;
+    padding: 0 40px;
+  }
+  .styles-gates__title-container {
+    width: 70%;
+  }
+  .styles-gates__title-container h2{
+    font-size: 72px;
+  }
+  .styles-gates__description {
+    font-size: 18px;
+  }
+  .styles-gates__grid-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .styles-gates__grid-cards > :nth-child(3n-1) {
+    transform: translateY(40px);
+  }
+  .styles-gates__grid-cards > :nth-child(3n) {
+    transform: translateY(80px);
+  }
+  .styles-gates__grid-cards > :nth-child(3n+1):nth-child(n+4) {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .styles-gates__container {
+    padding: 0;
+  }
+  .styles-gates__top {
+    margin: 0 auto 60px;
+    width: 800px;
+  }
+  .styles-gates__description {
+    font-size: 20px;
+  }
+  .styles-gates__grid-cards {
+    margin: 0 auto;
+    gap: 8px;
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .styles-gates__top {
+    width: 1000px;
+  }
+  .styles-gates__container {
+    margin-top: 100px;
+  }
+  .styles-gates__grid-cards {
+    width: 1000px;
+  }
+}

@@ -26,6 +26,7 @@
 :root {
   --color-white: #FFFFFF;
   --color-black: #000000;
+  --color-coffee: #af9987;
 }
 * {
   box-sizing: border-box;

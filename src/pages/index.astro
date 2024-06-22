@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import { AppConfig } from '../helpers/AppConfig';
 import Cover from '@/components/cover/cover';
+import GridGates from '@/components/stylesGates/stylesGates';
 const { title, description } = AppConfig;
 ---
 
 <Layout {...{ title, description }}>
 	<Cover client:only="react"/>
+	<GridGates client:only="react"/>
 </Layout>
 
