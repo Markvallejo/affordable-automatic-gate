@@ -22,7 +22,6 @@ const CardGates = ({image, title, description, currentIndex } : CardGatesProps )
       <div className={`${classNameId}__text-container`}>
         <h3>{title}</h3>
         <div dangerouslySetInnerHTML={{__html: description}} />
-        {/* <p>Crafted with the highest <strong>quality.</strong></p> */}
       </div>
     </div>  
   );
