@@ -1,0 +1,82 @@
+.contact-gates {
+  background-color: var(--color-green);
+  min-height: 400px;
+  position: relative;
+  width: 100%;
+}
+.contact-gates {
+  padding: 50px 20px;
+  width: 100%;
+}
+.contact-gates__title {
+  color: var(--color-white);
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-gates__container-right {
+  text-align: right;
+  margin-bottom: 50px;
+}
+.contact-gates__container-right__info {
+  align-items: flex-end;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+.contact-gates__container-right__info img {
+  width: 40px;
+  height: auto;
+}
+.contact-gates__container-left__info {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+.contact-gates__container-left__info img {
+  width: 100px;
+  height: auto;
+}
+.contact-gates__container-info__title {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+.contact-gates__container-right__title strong {
+  font-weight: 700;
+}
+.contact-gates__description {
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+.contact-gates__text-contact {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+.contact-gates__link-form {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.contact-gates__container-map {
+  border-radius: 10px;
+  height: auto;
+  margin-top: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+.contact-gates__container-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
