@@ -80,3 +80,44 @@
   height: 100%;
   object-fit: contain;
 }
+
+@media screen and (min-width: 768px) {
+  .contact-gates {
+    padding: 50px 40px;
+  }
+  .contact-gates__title {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .contact-gates__container-info__title {
+    font-size: 60px;
+  }
+  .contact-gates__container-right__info img {
+    width: 60px;
+  }
+  .contact-gates__container-left__info img {
+    width: 80px;
+  }
+  .contact-gates__container-left__info .contact-gates__container-info__title {
+    width: 70%;
+  }
+  .contact-gates__description {
+    font-size: 18px;
+    width: 70%;
+  }
+  .contact-gates__container-right .contact-gates__description {
+    margin-left: 30%;
+  }
+  .contact-gates__text-contact {
+    font-size: 22px;
+  }
+  .contact-gates__link-form {
+    font-size: 20px;
+  }
+  .contact-gates__container-map {
+    height: 220px;
+  }
+  .contact-gates__container-map img {
+    object-fit: cover;
+  }
+}
