@@ -34,7 +34,7 @@
 .hamburger-button--container {
   height: auto;
   width: 30px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease-in-out;
 }
 .hamburger-button--container button {
   background-color: transparent;

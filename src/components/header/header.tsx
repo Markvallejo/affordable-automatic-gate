@@ -34,7 +34,7 @@ const Header = () => {
         </div>
       </div>
       {
-        modalOpen && <Modal closeModalHandler={closeModal} >
+        modalOpen && <Modal title="Menu" closeModalHandler={closeModal} >
           <div>This is Modal</div>
         </Modal>
       }

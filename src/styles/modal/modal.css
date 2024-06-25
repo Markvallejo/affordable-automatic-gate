@@ -14,18 +14,31 @@
     align-items: center;
     display: flex;
     height: 80px;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 20px;
     position: relative;
     width: 100%;
   }
-  .modal__overlayBtn {
-    color: var(--color-coffee);
-    font-size: 2rem;
+  .modal__title {
+    color: var(--color-white);
+    font-size: 18px;
     font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .modal__overlayBtn {
+    align-items: center;
+    color: var(--color-coffee);
+    display: flex;
+    font-size: 18px;
+    gap: 10px;
     height: auto;
-    width: 30px;
-    transition: transform 0.3s ease;
+    width: max-content;
+    transition: transform 0.2s ease;
+  }
+  .modal__overlayBtn img {
+    height: auto;
+    width: 28px;
   }
   .modal__overlayBtn:hover {
     cursor: pointer;
@@ -33,7 +46,7 @@
   }
   .modal__overlay {
     display: block;
-    background-color: rgba(10, 10, 10, 0.86);
+    background-color: var(--color-black);
     height: 100%;
     position: absolute;
     top: 0;
