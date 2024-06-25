@@ -5,6 +5,7 @@ import Cover from '@/components/cover/cover';
 import GridGates from '@/components/stylesGates/stylesGates';
 import TechnicalGates from '@/components/technicalGates/technicalGates';
 import ContactGates from '@/components/contact/contact';
+import Footer from '@/components/footer/footer';
 const { title, description } = AppConfig;
 ---
 
@@ -13,5 +14,6 @@ const { title, description } = AppConfig;
 	<GridGates client:only="react"/>
 	<TechnicalGates client:only="react"/>
 	<ContactGates client:only="react"/>
+	<Footer client:only="react" />
 </Layout>
 

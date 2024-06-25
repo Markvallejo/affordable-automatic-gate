@@ -40,6 +40,7 @@ const ContactGates = () => {
             <img src="/assets/contact/contact_map.png" alt="location" />
           </a>
         </div>
+          <div className={`${classNameId}__bg-bottom`} />
       </div>
     </div>
   );

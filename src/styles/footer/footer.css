@@ -1,0 +1,23 @@
+.footer-wrapper {
+  align-items: center;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  padding: 0 20px 70px 20px;
+  position: relative;
+  width: 100%;
+}
+.footer-wrapper p {
+  color: var(--color-white);
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-wrapper p {
+    font-size: 20px;
+  }
+}
