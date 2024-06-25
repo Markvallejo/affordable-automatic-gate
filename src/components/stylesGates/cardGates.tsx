@@ -38,7 +38,7 @@ const CardGates = ({
         </div>
       </div>
       {
-        modalOpen && <Modal title="Menu" closeModalHandler={closeModal} >
+        modalOpen && <Modal title="Gallery" closeModalHandler={closeModal} >
           <Gallery currentIndex={currentIndex} />
         </Modal>
       }

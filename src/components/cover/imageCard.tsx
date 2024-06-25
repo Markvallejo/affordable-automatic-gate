@@ -27,7 +27,7 @@ const ImageCard = ({ src, alt, currentIndex }: Image) => {
         <div className="image-card-gradient" />
       </div>
       {
-        modalOpen && <Modal title="Menu" closeModalHandler={closeModal} >
+        modalOpen && <Modal title="Gallery" closeModalHandler={closeModal} >
           <Gallery currentIndex={currentIndex} />
         </Modal>
       }
