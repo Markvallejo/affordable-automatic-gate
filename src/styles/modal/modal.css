@@ -10,12 +10,26 @@
     overflow: hidden;
     z-index: 9999;
   }
-  
-  .modal__overlayBtn {
-    height: 100%;
-    position: absolute;
-    top: 0;
+  .modal__container-overlayBtn {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: flex-end;
+    padding: 20px;
+    position: relative;
     width: 100%;
+  }
+  .modal__overlayBtn {
+    color: var(--color-coffee);
+    font-size: 2rem;
+    font-weight: 700;
+    height: auto;
+    width: 30px;
+    transition: transform 0.3s ease;
+  }
+  .modal__overlayBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
   .modal__overlay {
     display: block;
@@ -28,4 +42,20 @@
   .modal__content {
     position: relative;
     width: 100%;
+    color: var(--color-white);
+  }
+
+  @media screen and (min-width: 768px) {
+    .modal__container-overlayBtn {
+      height: 100px;
+      padding: 20px 40px;
+    }
+  }
+
+  @media screen and (min-width: 1360px) {
+    .modal__container-overlayBtn {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
   }
