@@ -11,7 +11,6 @@
 .styles-gates__image-title-container {
   align-items: center;
   display: flex;
-  column-gap: 20px;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -86,8 +85,16 @@
     margin: 0 auto 60px;
     width: 800px;
   }
+  .styles-gates__image-title-container {
+    justify-content: flex-end;
+  } 
+  .styles-gates__title-container {
+    width: 60%;
+  }
   .styles-gates__description {
     font-size: 20px;
+    margin-left: auto;
+    width: 70%;
   }
   .styles-gates__grid-cards {
     margin: 0 auto;
@@ -97,6 +104,9 @@
 }
 
 @media screen and (min-width: 1360px) {
+  .styles-gates__title-container {
+    width: 45%;
+  }
   .styles-gates__top {
     width: 1000px;
   }
@@ -105,5 +115,8 @@
   }
   .styles-gates__grid-cards {
     width: 1000px;
+  }
+  .styles-gates__description  {
+    width: 60%;
   }
 }
