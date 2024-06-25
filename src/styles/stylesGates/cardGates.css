@@ -10,12 +10,13 @@
   background-color: rgba(0, 0, 0, 0.9)
 }
 .card-gates__image-container {
+  background-color: var(--color-white);
   height: 120px;
   width: 100%;
 }
 .card-gates__image-container img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 .card-gates__text-container {

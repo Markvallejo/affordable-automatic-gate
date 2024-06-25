@@ -1,41 +1,41 @@
 [
   {
-    "image": "/assets/grid-gates/home_style_affordable.jpg",
+    "image": "/assets/grid-gates/home_style_affordable.png",
     "title" : "Affordable",
     "description": "<p>Crafted with the highest <strong>quality</strong>.</p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_ranch.jpg",
+    "image": "/assets/grid-gates/home_style_ranch.png",
     "title" : "Ranch",
     "description": "<p>Wider <strong>bar spacing</strong> to cover larger areas.</p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_runner.jpg",
+    "image": "/assets/grid-gates/home_style_runner.png",
     "title" : "4 Runner",
     "description": "<p><strong>Smooth-top</strong>, perfect forurban designs.</p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_doggy_style.jpg",
+    "image": "/assets/grid-gates/home_style_doggy.png",
     "title" : "Doggy style",
     "description": "<p>Feature closely spaced <strong>lower bars.</strong></p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_contemporary.jpg",
+    "image": "/assets/grid-gates/home_style_contemporary.png",
     "title" : "Contemporary",
     "description": "<p>Specific design and <strong>personalized</strong> details.</p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_center_designs.jpg",
+    "image": "/assets/grid-gates/home_style_center_designs.png",
     "title" : "Center Designs",
     "description": "<p>Initial, animal outline, or your <strong>unique idea.</strong></p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_fence_only.jpg",
+    "image": "/assets/grid-gates/home_style_fence_only.png",
     "title" : "Fence Only",
     "description": "<p><strong>Same styles</strong> as you see in our gates.</p>"
   },
   {
-    "image": "/assets/grid-gates/home_style_brick_work.jpg",
+    "image": "/assets/grid-gates/home_style_brick_work.png",
     "title" : "Brick work",
     "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>"
   }
