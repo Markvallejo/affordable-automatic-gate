@@ -27,7 +27,6 @@ const Modal = ({title, children, closeModalHandler }: ModalProps ) => {
   return modalRoot
     ? ReactDOM.createPortal(
       <div className={`${classNameId}`}>
-        <div className={`${classNameId}__overlay`} />
         <div className={`${classNameId}__container-overlayBtn`}>
           <p className={`${classNameId}__title`}>{title}</p>
           <button className={`${classNameId}__overlayBtn`} onClick={closeModalHandler} >

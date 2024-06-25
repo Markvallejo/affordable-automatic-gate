@@ -8,7 +8,6 @@ const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleMenu = () => {
     setModalOpen(true);
-    console.log("open menu");
   };
   const closeModal = () => {
     setModalOpen(false);

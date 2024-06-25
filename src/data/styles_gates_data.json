@@ -2,41 +2,49 @@
   {
     "image": "/assets/grid-gates/home_style_affordable.png",
     "title" : "Affordable",
-    "description": "<p>Crafted with the highest <strong>quality</strong>.</p>"
+    "description": "<p>Crafted with the highest <strong>quality</strong>.</p>",
+    "imageGallery": "/assets/cover/home_slider_01.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_ranch.png",
     "title" : "Ranch",
-    "description": "<p>Wider <strong>bar spacing</strong> to cover larger areas.</p>"
+    "description": "<p>Wider <strong>bar spacing</strong> to cover larger areas.</p>",
+    "imageGallery": "/assets/cover/home_slider_02.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_runner.png",
     "title" : "4 Runner",
-    "description": "<p><strong>Smooth-top</strong>, perfect forurban designs.</p>"
+    "description": "<p><strong>Smooth-top</strong>, perfect forurban designs.</p>",
+    "imageGallery": "/assets/cover/home_slider_03.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_doggy.png",
     "title" : "Doggy style",
-    "description": "<p>Feature closely spaced <strong>lower bars.</strong></p>"
+    "description": "<p>Feature closely spaced <strong>lower bars.</strong></p>",
+    "imageGallery": "/assets/cover/home_slider_04.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_contemporary.png",
     "title" : "Contemporary",
-    "description": "<p>Specific design and <strong>personalized</strong> details.</p>"
+    "description": "<p>Specific design and <strong>personalized</strong> details.</p>",
+    "imageGallery": "/assets/cover/home_slider_05.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_center_designs.png",
     "title" : "Center Designs",
-    "description": "<p>Initial, animal outline, or your <strong>unique idea.</strong></p>"
+    "description": "<p>Initial, animal outline, or your <strong>unique idea.</strong></p>",
+    "imageGallery": "/assets/cover/home_slider_05.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_fence_only.png",
     "title" : "Fence Only",
-    "description": "<p><strong>Same styles</strong> as you see in our gates.</p>"
+    "description": "<p><strong>Same styles</strong> as you see in our gates.</p>",
+    "imageGallery": "/assets/cover/home_slider_05.jpg"
   },
   {
     "image": "/assets/grid-gates/home_style_brick_work.png",
     "title" : "Brick work",
-    "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>"
+    "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>",
+    "imageGallery": "/assets/cover/home_slider_05.jpg"
   }
 ]

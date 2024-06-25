@@ -1,23 +1,37 @@
+import { useState } from "react";
 import "@/styles/cover/imageCard.css";
-
+import Modal from "../modal/modal";
+import Gallery from "../gallery/gallery";
 interface Image { 
   src: string;
   alt: string;
   currentIndex?: number;
 }
 
-const ImageCard = ({ src, alt, currentIndex } : Image ) => {
+const ImageCard = ({ src, alt, currentIndex }: Image) => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   const handleClick = () => {
-    console.log(`open gallery ${currentIndex}`);
+    setModalOpen(true);
   };
 
   return (
-    <div className="image-card-container" onClick={handleClick}>
-     <div className="image-container">
-        <img src={src} alt={alt} />
+    <>  
+      <div className="image-card-container" onClick={handleClick}>
+      <div className="image-container">
+          <img src={src} alt={alt} />
+        </div>
+        <div className="image-card-gradient" />
       </div>
-      <div className="image-card-gradient" />
-    </div>
+      {
+        modalOpen && <Modal title="Menu" closeModalHandler={closeModal} >
+          <Gallery currentIndex={currentIndex} />
+        </Modal>
+      }
+    </>
   );
 };
 
