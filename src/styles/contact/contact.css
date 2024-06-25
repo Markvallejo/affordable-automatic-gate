@@ -147,6 +147,10 @@
     margin: 0 auto;
     width: 800px;
   }
+  .contact-gates__title {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
   .contact-gates__container-info__title {
     font-size: 72px;
   }
