@@ -165,3 +165,9 @@
   }
 }
 
+@media screen and (min-width: 1920px) {
+  .technical-gates__background {
+    height: calc(100% + 160px);
+    top: -160px;
+  }
+}
