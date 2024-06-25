@@ -8,7 +8,7 @@ const ContactGates = () => {
   }
   
   return (
-    <div className={`${classNameId}`}>
+    <div id="direct-call" className={`${classNameId}`}>
       <div className={`${classNameId}__main-container`} >
         <p className={`${classNameId}__title`}><strong>Contact</strong> information</p>
         <div className={`${classNameId}__container-right`}>
@@ -31,9 +31,11 @@ const ContactGates = () => {
           <button className={`${classNameId}__link-form`} onClick={handleClick} > 
             Click here to complete our form.
           </button>
-          <p className={`${classNameId}__description`}> 
-            We'll provide you with an optimal cost estimate for any gate, fence or reparation. 
-          </p>
+          <div id="cost-estimate">
+            <p className={`${classNameId}__description`}> 
+              We'll provide you with an optimal cost estimate for any gate, fence or reparation. 
+            </p>
+          </div>
         </div>
         <div className={`${classNameId}__container-map`}>
           <a href="https://www.google.com.mx/maps/@25.4083072,-101.0168044,14z" target="_blank">

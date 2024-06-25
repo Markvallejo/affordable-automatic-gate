@@ -10,7 +10,7 @@ import ImageCard from "./imageCard";
 const Cover = () => {
 
   return (
-    <div className="cover-container">
+    <div id="automatic-gate" className="cover-container">
       <Swiper
         className="swiper"
         spaceBetween={0}
@@ -21,10 +21,10 @@ const Cover = () => {
         }}
         modules={[Pagination, Autoplay]}
         loop={imagesData.length > 1}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
         {imagesData.map((image, index) => (
           <SwiperSlide key={index}>

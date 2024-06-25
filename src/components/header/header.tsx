@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "@/styles/header/header.css";
 import Modal from "../modal/modal";
+import Menu from "../menu/menu";
 
 const Header = () => {
 
@@ -35,7 +36,7 @@ const Header = () => {
       </div>
       {
         modalOpen && <Modal title="Menu" closeModalHandler={closeModal} >
-          <div>This is Modal</div>
+          <Menu closeModalHandler={closeModal} />
         </Modal>
       }
     </>

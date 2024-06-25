@@ -12,7 +12,7 @@ const StylesGates = ({  } : GridGateProps ) => {
   const classNameId = "styles-gates";
 
   return (
-    <div className={`${classNameId}__container`} >
+    <div id="gate-styles" className={`${classNameId}__container`} >
       <div className={`${classNameId}__top`}>
         <div className= {`${classNameId}__image-title-container`}>
           <div className={`${classNameId}__image-container`}>
