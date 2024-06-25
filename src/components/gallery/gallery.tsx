@@ -43,7 +43,6 @@ const Gallery = ({ currentIndex } : GalleryProps) => {
         modules={[Pagination]}
       >
         {galleryData.map((item, index) => (
-          console.log(item),
           <SwiperSlide key={index}>
             {
               buildGalleryItem(item.title, item.description, item.image, item.imageGallery)
