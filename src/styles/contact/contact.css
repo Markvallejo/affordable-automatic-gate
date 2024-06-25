@@ -93,10 +93,10 @@
     font-size: 60px;
   }
   .contact-gates__container-right__info img {
-    width: 60px;
+    width: 70px;
   }
   .contact-gates__container-left__info img {
-    width: 80px;
+    width: 90px;
   }
   .contact-gates__container-left__info .contact-gates__container-info__title {
     width: 70%;
@@ -116,8 +116,59 @@
   }
   .contact-gates__container-map {
     height: 220px;
+    margin-top: 50px;
   }
-  .contact-gates__container-map img {
-    object-fit: cover;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-gates {
+    padding: 50px 0;
+  }
+  .contact-gates__main-container {
+    margin: 0 auto;
+    width: 800px;
+  }
+  .contact-gates__container-info__title {
+    font-size: 72px;
+  }
+  .contact-gates__container-right__info img {
+    width: 80px;
+  }
+  .contact-gates__container-left__info img {
+    width: 100px;
+  }
+  .contact-gates__description {
+    font-size: 20px;
+  }
+  .contact-gates__text-contact {
+    font-size: 24px;
+  }
+  .contact-gates__link-form  {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .contact-gates__main-container {
+    width: 1000px;
+  }
+  .contact-gates__description {
+    width: 60%;
+  }
+  .contact-gates__container-right .contact-gates__description {
+    margin-left: 40%;
+  }
+  .contact-gates__container-left__info .contact-gates__container-info__title {
+    width: 60%;
+  }
+  .contact-gates__container-right__info img {
+    width: 90px;
+  }
+  .contact-gates__container-left__info img {
+    width: 110px;
+  }
+  .contact-gates__container-map {
+    height: 250px;
+    margin-top: 80px;
   }
 }
