@@ -2,7 +2,7 @@
 @font-face {
   font-display: swap;
   font-family: 'KantumruyPro';
-  src: url('/fonts/KantumruyPro-Regular.ttf') format('ttf');
+  src: url('/fonts/KantumruyPro-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -10,7 +10,7 @@
 @font-face {
   font-display: swap;
   font-family: 'KantumruyPro';
-  src: url('/fonts/KantumruyPro-Medium.ttf') format('ttf');
+  src: url('/fonts/KantumruyPro-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
@@ -18,7 +18,7 @@
 @font-face {
   font-display: swap;
   font-family: 'KantumruyPro';
-  src: url('/fonts/KantumruyPro-Bold.ttf') format('ttf');
+  src: url('/fonts/KantumruyPro-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
