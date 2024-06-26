@@ -26,10 +26,11 @@
   background-color: transparent;
   border: none;
   box-shadow: 0 -1px 0 var(--color-black) inset;
-  height: 40px;
   font-size: 16px;
   font-weight: 700;
   flex-grow: 1;
+  height: 40px;
+  padding-right: 5px;
   text-align: right;
 }
 
@@ -73,12 +74,14 @@
   border-radius: 5px;
   box-shadow: none;
   font-weight: 400;
-  min-height: 60px;
+  min-height: 80px;
+  padding: 12px;
   resize: none;
   text-align: left;
   width: 100%;
 }
 .input-text__inputTextArea:focus {
-  outline: none;
+  outline: var(--color-coffee) solid 2px;
+  border: none;
   box-shadow: none
 }

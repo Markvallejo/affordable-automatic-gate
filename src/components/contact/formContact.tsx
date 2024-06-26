@@ -102,13 +102,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
           />
           <InputText
             error=""
-            label="Color" 
-            name="color"
-            onChange={() => {}}
-            placeholder="Color of gate"
-          />
-          <InputText
-            error=""
             label="Brick work" 
             name="brickWork"
             onChange={() => {}}

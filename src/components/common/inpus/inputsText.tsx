@@ -37,7 +37,7 @@ const InputText: React.FC<Props> = (props) => {
       <div className={`${classNameId}__container-main ${isTextArea ? 'text-area-container' : ""} `}>
         <label
           className={`${classNameId}__inputLabel ${required ? "is-bold" : ""} `}
-          htmlFor={label}
+          htmlFor={name}
         >
           {label}:
         </label>
@@ -45,7 +45,8 @@ const InputText: React.FC<Props> = (props) => {
           <input
             className={`${classNameId}__inputField ${
               error ? `${classNameId}__inputError` : ""
-            }`}
+              }`}
+            id={name}
             placeholder={placeholder}
             name={name}
             type={"text"}
@@ -61,6 +62,7 @@ const InputText: React.FC<Props> = (props) => {
             className={`${classNameId}__inputField ${classNameId}__inputTextArea ${
               error ? `${classNameId}__inputError` : ""
             }`}
+            id={name}
             placeholder={placeholder}
             name={name}
             maxLength={250}
