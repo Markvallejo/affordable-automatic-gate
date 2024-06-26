@@ -3,6 +3,7 @@
     "image": "/assets/grid-gates/home_style_affordable.png",
     "title" : "Affordable",
     "description": "<p>Crafted with the highest <strong>quality</strong>.</p>",
+    "details": "<p>Designed with an <strong>arch or rectangular</strong> shape, our affordable option is crafted with the highest quality materials.</p>",
     "imageGallery": "/assets/cover/home_slider_01.jpg"
   },
   {
