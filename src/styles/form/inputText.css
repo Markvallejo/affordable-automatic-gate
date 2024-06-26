@@ -1,0 +1,84 @@
+.input-text {
+  padding-bottom: 10px; 
+  text-align: right;
+  width: 100%;
+}
+.input-text__container-main {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.input-text__inputLabel {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  text-wrap: balance;
+}
+.is-bold {
+  font-weight: 700;
+}
+
+.input-text__inputField {
+  color: var(--color-black);
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 -1px 0 var(--color-black) inset;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.input-text__inputField:focus {
+  outline: none;
+  box-shadow: 0 -2px 0 var(--color-coffee) inset;
+}
+.input-text__inputField::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.input-text__inputField[type="number"]::-webkit-inner-spin-button,
+.input-text__inputField[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-text__inputField[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+.input-text__inputError {
+  box-shadow: 0 -2px 0 rgb(215, 3, 3) inset;
+}
+
+.input-text__errorText {
+  bottom: 0;
+  color: rgb(215, 3, 3);
+  font-size: 12px;
+}
+
+.text-area-container {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-text__inputTextArea {
+  border: solid 1px var(--color-black);
+  border-radius: 5px;
+  box-shadow: none;
+  font-weight: 400;
+  min-height: 60px;
+  resize: none;
+  text-align: left;
+  width: 100%;
+}
+.input-text__inputTextArea:focus {
+  outline: none;
+  box-shadow: none
+}
