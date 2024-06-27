@@ -1,29 +1,26 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+import 'swiper/css/navigation';
+
 import galleryData from '@/data/styles_gates_data.json';
 
 import "@/styles/gallery/gallery.css";
 
 interface GalleryProps { 
-  currentIndex?: number;
+  currentIndex: number;
 }
 
 const Gallery = ({ currentIndex } : GalleryProps) => {
   const classNameId = "gallery";
+  const data = galleryData[currentIndex];
+  const { title, details, icon, gallery } = data;
 
-  const buildGalleryItem = (title: string, description: string, imageIcon: string, image: string) => { 
+  const buildGalleryItem = (image: string, alt: string,) => { 
     return (
       <div className={`${classNameId}__wrapper`}>
         <div className={`${classNameId}__image-container`}>
-          <img src={image} alt="style gates" />
+          <img src={image} alt={alt} />
           <div className={`${classNameId}__image-gradient`} />
-        </div>
-        <div className={`${classNameId}__text-container`}>
-          <div className={`${classNameId}__title-container`}>
-            <img src={imageIcon} alt="style icon" />
-            <p>{title}</p>
-          </div>
-          <div className={`${classNameId}__description`} dangerouslySetInnerHTML={{__html: description}} />
         </div>
       </div>
     );
@@ -35,21 +32,26 @@ const Gallery = ({ currentIndex } : GalleryProps) => {
         className="swiper"
         spaceBetween={0}
         slidesPerView={1}
-        initialSlide={currentIndex} 
         pagination={{
           dynamicBullets: true,
           clickable: true,
         }}
-        modules={[Pagination]}
+        navigation
+        modules={[Pagination, Navigation]}
       >
-        {galleryData.map((item, index) => (
+        {gallery.map((item, index) => (
           <SwiperSlide key={index}>
-            {
-              buildGalleryItem(item.title, item.description, item.image, item.imageGallery)
-            }
+            { buildGalleryItem(item.image, item.alt) }
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className={`${classNameId}__text-container`}>
+          <div className={`${classNameId}__title-container`}>
+            <img src={icon} alt="style icon" />
+            <p>{title}</p>
+          </div>
+          <div className={`${classNameId}__description`} dangerouslySetInnerHTML={{__html: details}} />
+        </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import Gallery from "../gallery/gallery";
 interface Image { 
   src: string;
   alt: string;
-  currentIndex?: number;
+  currentIndex: number;
 }
 
 const ImageCard = ({ src, alt, currentIndex }: Image) => {

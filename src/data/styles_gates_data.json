@@ -1,51 +1,234 @@
 [
   {
-    "image": "/assets/grid-gates/home_style_affordable.png",
+    "image": "/assets/grid-gates/home_style_affordable.jpg",
     "title" : "Affordable",
     "description": "<p>Crafted with the highest <strong>quality</strong>.</p>",
     "details": "<p>Designed with an <strong>arch or rectangular</strong> shape, our affordable option is crafted with the highest quality materials.</p>",
-    "imageGallery": "/assets/cover/home_slider_01.jpg"
+    "icon": "/assets/grid-gates/icon_affordable.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/affordable_01.jpg",
+        "alt": "Affordable 1"
+      },
+      {
+        "image": "/assets/gallery/affordable_02.jpg",
+        "alt": "Affordable 2"
+      },
+      {
+        "image": "/assets/gallery/affordable_03.jpg",
+        "alt": "Affordable 3"
+      },
+      {
+        "image": "/assets/gallery/affordable_04.jpg",
+        "alt": "Affordable 4"
+      },
+      {
+        "image": "/assets/gallery/affordable_05.jpg",
+        "alt": "Affordable 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_ranch.png",
+    "image": "/assets/grid-gates/home_style_ranch.jpg",
     "title" : "Ranch",
     "description": "<p>Wider <strong>bar spacing</strong> to cover larger areas.</p>",
-    "imageGallery": "/assets/cover/home_slider_02.jpg"
+    "details": "<p>Enhance your ranch entrance with our spacious design, featuring <strong>increased bar spacing</strong> to cover larger areas.</p>",
+    "icon": "/assets/grid-gates/icon_ranch.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/ranch_01.jpg",
+        "alt": "Ranch 1"
+      },
+      {
+        "image": "/assets/gallery/ranch_02.jpg",
+        "alt": "Ranch 2"
+      },
+      {
+        "image": "/assets/gallery/ranch_03.jpg",
+        "alt": "Ranch 3"
+      },
+      {
+        "image": "/assets/gallery/ranch_04.jpg",
+        "alt": "Ranch 4"
+      },
+      {
+        "image": "/assets/gallery/ranch_05.jpg",
+        "alt": "Ranch 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_runner.png",
+    "image": "/assets/grid-gates/home_style_runner.jpg",
     "title" : "4 Runner",
     "description": "<p><strong>Smooth-top</strong>, perfect forurban designs.</p>",
-    "imageGallery": "/assets/cover/home_slider_03.jpg"
+    "details": "<p>Elegant, practical, and modern, our <strong>smooth-top 4</strong> runner style perfectly complements urban designs.</p>",
+    "icon": "/assets/grid-gates/icon_runner.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/4runner_01.jpg",
+        "alt": "Runner 1"
+      },
+      {
+        "image": "/assets/gallery/4runner_02.jpg",
+        "alt": "Runner 2"
+      },
+      {
+        "image": "/assets/gallery/4runner_03.jpg",
+        "alt": "Runner 3"
+      },
+      {
+        "image": "/assets/gallery/4runner_04.jpg",
+        "alt": "Runner 4"
+      },
+      {
+        "image": "/assets/gallery/4runner_05.jpg",
+        "alt": "Runner 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_doggy.png",
+    "image": "/assets/grid-gates/home_style_doggy.jpg",
     "title" : "Doggy style",
     "description": "<p>Feature closely spaced <strong>lower bars.</strong></p>",
-    "imageGallery": "/assets/cover/home_slider_04.jpg"
+    "details": "<p>Tailored for pet owners, our 'Doggy Style' gates feature <strong>lower, closely spaced bars</strong> to ensure the safety of your beloved pets.</p>",
+    "icon": "/assets/grid-gates/icon_doggy.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/doggie_01.jpg",
+        "alt": "Doggy 1"
+      },
+      {
+        "image": "/assets/gallery/doggie_02.jpg",
+        "alt": "Doggy 2"
+      },
+      {
+        "image": "/assets/gallery/doggie_03.jpg",
+        "alt": "Doggy 3"
+      },
+      {
+        "image": "/assets/gallery/doggie_04.jpg",
+        "alt": "Doggy 4"
+      },
+      {
+        "image": "/assets/gallery/doggie_05.jpg",
+        "alt": "Doggy 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_contemporary.png",
+    "image": "/assets/grid-gates/home_style_contemporary.jpg",
     "title" : "Contemporary",
     "description": "<p>Specific design and <strong>personalized</strong> details.</p>",
-    "imageGallery": "/assets/cover/home_slider_05.jpg"
+    "details": "<p>Do you have a <strong>specific gate design</strong> in mind or would you like to add some <strong>personalized details?</strong> Give us a call, and let's make your vision a reality.</p>",
+    "icon": "/assets/grid-gates/icon_contemporary.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/contemporary_01.jpg",
+        "alt": "Contemporary 1"
+      },
+      {
+        "image": "/assets/gallery/contemporary_02.jpg",
+        "alt": "Contemporary 2"
+      },
+      {
+        "image": "/assets/gallery/contemporary_03.jpg",
+        "alt": "Contemporary 3"
+      },
+      {
+        "image": "/assets/gallery/contemporary_04.jpg",
+        "alt": "Contemporary 4"
+      },
+      {
+        "image": "/assets/gallery/contemporary_05.jpg",
+        "alt": "Contemporary 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_center_designs.png",
+    "image": "/assets/grid-gates/home_style_center_designs.jpg",
     "title" : "Center Designs",
     "description": "<p>Initial, animal outline, or your <strong>unique idea.</strong></p>",
-    "imageGallery": "/assets/cover/home_slider_05.jpg"
+    "details": "<p>Looking for a <strong>metal centerpiece</strong> design? Whether it's an initial, an animal outline, or your unique idea, we can bring it to life.</p>",
+    "icon": "/assets/grid-gates/icon_center_designs.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/center_01.jpg",
+        "alt": "Center Designs 1"
+      },
+      {
+        "image": "/assets/gallery/center_02.jpg",
+        "alt": "Center Designs 2"
+      },
+      {
+        "image": "/assets/gallery/center_03.jpg",
+        "alt": "Center Designs 3"
+      },
+      {
+        "image": "/assets/gallery/center_04.jpg",
+        "alt": "Center Designs 4"
+      },
+      {
+        "image": "/assets/gallery/center_05.jpg",
+        "alt": "Center Designs 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_fence_only.png",
+    "image": "/assets/grid-gates/home_style_fence_only.jpg",
     "title" : "Fence Only",
     "description": "<p><strong>Same styles</strong> as you see in our gates.</p>",
-    "imageGallery": "/assets/cover/home_slider_05.jpg"
+    "details": "<p>Discover the same superior <strong>quality materials</strong> and styles in our fences as you see in our gates.</p>",
+    "icon": "/assets/grid-gates/icon_fence_only.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/fence_01.jpg",
+        "alt": "Fence Only 1"
+      },
+      {
+        "image": "/assets/gallery/fence_02.jpg",
+        "alt": "Fence Only 2"
+      },
+      {
+        "image": "/assets/gallery/fence_03.jpg",
+        "alt": "Fence Only 3"
+      },
+      {
+        "image": "/assets/gallery/fence_04.jpg",
+        "alt": "Fence Only 4"
+      },
+      {
+        "image": "/assets/gallery/fence_05.jpg",
+        "alt": "Fence Only 5"
+      }
+    ]
   },
   {
-    "image": "/assets/grid-gates/home_style_brick_work.png",
+    "image": "/assets/grid-gates/home_style_brick_work.jpg",
     "title" : "Brick work",
     "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>",
-    "imageGallery": "/assets/cover/home_slider_05.jpg"
+    "details": "<p>Change your metal post for a <strong>beautiful and strong</strong> brick column and brick signs.</p>",
+    "icon": "/assets/grid-gates/icon_brick_work.png",
+    "gallery": [
+      {
+        "image": "/assets/gallery/brick_01.jpg",
+        "alt": "Brick Work 1"
+      },
+      {
+        "image": "/assets/gallery/brick_02.jpg",
+        "alt": "Brick Work 2"
+      },
+      {
+        "image": "/assets/gallery/brick_03.jpg",
+        "alt": "Brick Work 3"
+      },
+      {
+        "image": "/assets/gallery/brick_04.jpg",
+        "alt": "Brick Work 4"
+      },
+      {
+        "image": "/assets/gallery/brick_05.jpg",
+        "alt": "Brick Work 5"
+      }
+    ]
   }
 ]
