@@ -61,6 +61,10 @@
   letter-spacing: 0.3px;
   line-height: 1.5;
 }
+.contact-gates__text-contact a {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
 .contact-gates__link-form {
   font-size: 18px;
   font-weight: 700;
@@ -86,6 +90,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: all 0.3s ease-in-out;
 }
 .contact-gates__bg-bottom {
   background-color: var(--color-black);
@@ -166,8 +171,21 @@
   .contact-gates__text-contact {
     font-size: 24px;
   }
+  .contact-gates__text-contact a:hover {
+    opacity: 0.9;
+    text-decoration: underline;
+    transform: scale(1.02);
+  }
   .contact-gates__link-form  {
     font-size: 22px;
+    transition: all 0.3s ease-in-out;
+  }
+  .contact-gates__link-form:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  .contact-gates__container-map:hover img {
+    transform: scale(1.02);
   }
 }
 

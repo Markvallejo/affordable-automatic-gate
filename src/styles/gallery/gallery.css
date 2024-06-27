@@ -117,9 +117,9 @@
   .gallery__container {
     width: 1000px;
   }
-  .gallery__container .swiper-pagination {
-    /* bottom: 24% !important; */
-  }
+  /* .gallery__container .swiper-pagination {
+    bottom: 24% !important;
+  } */
   .gallery__image-container {
     height: 550px;
   }
