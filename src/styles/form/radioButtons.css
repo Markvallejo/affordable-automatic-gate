@@ -1,0 +1,40 @@
+.radio-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .radio-input {
+    display: none;
+  }
+  
+  .radio-custom {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+  }
+  
+  .radio-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  
+  .radio-circle.selected {
+    background-color: #000;
+  }
+  
+  .radio-label {
+    font-size: 14px;
+  }
