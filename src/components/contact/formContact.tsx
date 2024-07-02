@@ -1,3 +1,4 @@
+import React from "react";
 import "@/styles/contact/formContact.css";
 import InputText from "../common/inpus/inputsText";
 import RadioButtons from "../common/radioButtons/radioButtons";
@@ -14,6 +15,29 @@ interface Option {
 
 const FormContact = ({ closeModalHandler }: FormContactProps) => {
   const classNameId = "form-contact";
+  const [sending, setSending] = React.useState(false);
+  const [formData, setFormData] = React.useState({
+    name: '',
+    phone: '',
+    address: '',
+    email: '',
+    style: '',
+    gateLength: '',
+    fenceLength: '',
+    openingStyle: '',
+    gateOpener: '',
+    color: '',
+    brickWork: '',
+    pointsAndCaps: '',
+    centerDesign: '',
+    customDesign: '',
+    comments: ''
+  });
+  const [errors, setErrors] = React.useState({
+    name: '',
+    phone: '',
+    address: ''
+  });
 
   const pointsAndCapsOptions: Option[] = [
     { value: 'sharp', label: '', 
@@ -35,30 +59,75 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     { value: 'no', label: 'No' },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { 
-    e.preventDefault();
-    console.log("Form submitted");
-    closeModalHandler();
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+    setErrors(prevErrors => ({
+      ...prevErrors,
+      [name]: ''
+    }));
+  };
+
+  const hanndlePointsAndCaps = (name: string) => (value: string)  => {
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  }
+  const hanndleCenterDesign = (name: string) => (value: string)  => {
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  }
+  const hanndleCustomDesign = (name: string) => (value: string)  => {
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
   }
 
-  const handleChange = (value: string) => {
-    console.log('Selected value:', value);
-  };
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => { 
+    e.preventDefault();
+
+    const newErrors = {
+      name: formData.name ? '' : 'Required field',
+      phone: formData.phone ? '' : 'Required field',
+      address: formData.address ? '' : 'Required field'
+    };
+
+    setErrors(newErrors);
+
+    if (!formData.name || !formData.phone || !formData.address) {
+      return;
+    }
+
+    console.log('formData', formData);
+   
+    setSending(true);
+    setTimeout(() => {
+      setSending(false);
+      closeModalHandler();
+    }, 2000);
+  }
 
   const buildRadioButtons = () => {
     return  (
       <div className={`${classNameId}__container-options`}>
         <div className={`${classNameId}__option`} >
           <p>Points and caps:</p>
-          <RadioButtons name="pointsAndCaps" options={pointsAndCapsOptions} onChange={handleChange} />
+          <RadioButtons name="pointsAndCaps" options={pointsAndCapsOptions} onChange={hanndlePointsAndCaps('pointsAndCaps')} />
         </div>
         <div className={`${classNameId}__option`}>
           <p>Center design:</p>
-          <RadioButtons name="centerDesign" options={yesNoOptions} onChange={handleChange} />
+          <RadioButtons name="centerDesign" options={yesNoOptions} onChange={hanndleCenterDesign('centerDesign')} />
         </div>
         <div className={`${classNameId}__option`}>
           <p>Custom design:</p>
-          <RadioButtons name="customDesign" options={yesNoOptions} onChange={handleChange} />
+          <RadioButtons name="customDesign" options={yesNoOptions} onChange={hanndleCustomDesign('customDesign')} />
         </div>
     </div>
     )
@@ -77,26 +146,26 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
         </p>
         <form id="form-contact" noValidate className={`${classNameId}__form`} onSubmit={handleSubmit} autoComplete="off">
           <InputText
-            error=""
+            error={errors.name}
             label="Name*"
             name="name"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Your name"
             required
           />
           <InputText
-            error=""
+            error={errors.phone}
             label="Phone*"
             name="phone"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Phone number"
             required
           />
           <InputText
-            error=""
+            error={errors.address}
             label="Address*"
             name="address"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Your address"
             required
           />
@@ -104,7 +173,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
             error=""
             label="Email"
             name="email"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Your email"
           />
           <br />
@@ -112,49 +181,49 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
             error=""
             label="Style" 
             name="style"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Style of gate"
           />
           <InputText
             error=""
             label="Gate length (ft)" 
             name="gateLength"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Length of gate"
           />
           <InputText
             error=""
             label="Fence length (ft)" 
             name="fenceLength"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Length of fence"
           />
           <InputText
             error=""
             label="Opening style" 
             name="openingStyle"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Style of opening"
           />
           <InputText
             error=""
             label="Gate opener" 
             name="gateOpener"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Type of gate opener"
           />
           <InputText
             error=""
             label="Color" 
             name="color"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Color of gate"
           />
           <InputText
             error=""
             label="Brick work" 
             name="brickWork"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Brick work"
           />
           <br />
@@ -166,11 +235,15 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
             error=""
             label="Comments" 
             name="comments"
-            onChange={() => {}}
+            onChange={handleInputChange}
             placeholder="Comments"
             isTextArea
           />
-          <GreenButton title="Send" onClick={() => handleSubmit} />
+          <GreenButton 
+            title={sending ? "Sending..." : "Send" }  
+            onClick={handleSubmit} 
+            disabled={sending}
+          />
         </form>
       </div>
     </div>
