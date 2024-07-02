@@ -1,0 +1,63 @@
+import express from 'express';
+import nodemailer from 'nodemailer';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post('/api/send-email', async (req, res) => {
+  const {
+    name, phone, address, email, style, gateLength, fenceLength,
+    openingStyle, gateOpener, color, brickWork, pointsAndCaps,
+    centerDesign, customDesign, comments
+  } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+
+  const mailOptions = {
+    from: `"Affordable Automatic Gate" <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_TO,
+    subject: 'Nuevo Formulario de Contacto',
+    text: `
+      Nombre: ${name}
+      Teléfono: ${phone}
+      Dirección: ${address}
+      Email: ${email}
+      Estilo: ${style}
+      Longitud de la puerta: ${gateLength}
+      Longitud de la cerca: ${fenceLength}
+      Estilo de apertura: ${openingStyle}
+      Operador de puerta: ${gateOpener}
+      Color: ${color}
+      Trabajo de ladrillos: ${brickWork}
+      Puntos y tapas: ${pointsAndCaps}
+      Diseño central: ${centerDesign}
+      Diseño personalizado: ${customDesign}
+      Comentarios: ${comments}
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email sent successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to send email', error });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});

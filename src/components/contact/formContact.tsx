@@ -90,7 +90,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   }
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => { 
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault();
 
     const newErrors = {
@@ -104,14 +104,27 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     if (!formData.name || !formData.phone || !formData.address) {
       return;
     }
-
-    console.log('formData', formData);
-   
     setSending(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('http://localhost:4321/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+  
       setSending(false);
       closeModalHandler();
-    }, 2000);
+    } catch (error) {
+      setSending(false);
+      console.error(error);
+    }
   }
 
   const buildRadioButtons = () => {
