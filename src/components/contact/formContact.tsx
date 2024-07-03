@@ -71,20 +71,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   };
 
-  const formatCurrentData = (data: typeof formData) => {
-    let htmlVersion = "";
-    let textVersion = "";
-  
-    Object.entries(data).forEach(([key, value]) => {
-      // Formatear para HTML
-      htmlVersion += `<p><strong>${key}:</strong> ${value}</p>`;
-  
-      // Formatear para texto plano
-      textVersion += `${key}: ${value}\n`;
-    });
-  
-    return { html: htmlVersion, text: textVersion };
-  }
 
   const hanndlePointsAndCaps = (name: string) => (value: string)  => {
     setFormData(prevData => ({
@@ -105,6 +91,18 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   }
 
+  const formatCurrentData = (data: typeof formData) => {
+    let htmlVersion: string  = `<h2>New estimate request</h2>`
+    let textVersion: string = "New estimate request\n\n"
+  
+    Object.entries(data).forEach(([key, value]) => {
+      htmlVersion += `<p><strong>${key}:</strong> ${value}</p>`;
+      textVersion += `${key}: ${value}\n`;
+    });
+  
+    return { html: htmlVersion, text: textVersion };
+  }
+
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault();
     const emailTo = import.meta.env.PUBLIC_EMAIL_USER;
@@ -121,35 +119,35 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }
     setSending(true);
 
-    const data = formatCurrentData(formData)
+    const newData = formatCurrentData(formData)
 
-    console.log('data', data);
-
-    // try {
-    //   const response = await fetch( "/api/sendEmail.json", {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //       from: 'Acme <onboarding@resend.dev>',
-    //       to: emailTo,
-    //       subject: 'New estimate request',
-    //       html: '',
-    //       text: ''
-    //     }),
-    //   });
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: 'Acme <onboarding@resend.dev>',
+          to: emailTo,
+          subject: 'New estimate request',
+          html: newData.html,
+          text: newData.text,
+        }),
+      });
   
-    //   const data = await response.json();
-    //   console.log('data', data);
+      const data = await response.json();
+      if (data) {
+        console.log("data--> ", data);
+      }
 
-
-    //   setSending(false);
-    //   closeModalHandler();
-    // } catch (error) {
-    //   setSending(false);
-    //   console.error(error);
-    // }
+      setSending(false);
+      closeModalHandler();
+    } catch (error) {
+      setSending(false);
+      console.error(error);
+    }
   }
 
   const buildRadioButtons = () => {
