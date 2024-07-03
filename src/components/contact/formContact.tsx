@@ -71,6 +71,21 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   };
 
+  const formatCurrentData = (data: typeof formData) => {
+    let htmlVersion = "";
+    let textVersion = "";
+  
+    Object.entries(data).forEach(([key, value]) => {
+      // Formatear para HTML
+      htmlVersion += `<p><strong>${key}:</strong> ${value}</p>`;
+  
+      // Formatear para texto plano
+      textVersion += `${key}: ${value}\n`;
+    });
+  
+    return { html: htmlVersion, text: textVersion };
+  }
+
   const hanndlePointsAndCaps = (name: string) => (value: string)  => {
     setFormData(prevData => ({
       ...prevData,
@@ -92,6 +107,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault();
+    const emailTo = import.meta.env.PUBLIC_EMAIL_USER;
 
     const newErrors = {
       name: formData.name ? '' : 'Required field',
@@ -100,31 +116,40 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     };
 
     setErrors(newErrors);
-
     if (!formData.name || !formData.phone || !formData.address) {
       return;
     }
     setSending(true);
 
-    try {
-      const response = await fetch('http://localhost:4321/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+    const data = formatCurrentData(formData)
+
+    console.log('data', data);
+
+    // try {
+    //   const response = await fetch( "/api/sendEmail.json", {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       from: 'Acme <onboarding@resend.dev>',
+    //       to: emailTo,
+    //       subject: 'New estimate request',
+    //       html: '',
+    //       text: ''
+    //     }),
+    //   });
   
-      if (!response.ok) {
-        throw new Error('Failed to send email');
-      }
-  
-      setSending(false);
-      closeModalHandler();
-    } catch (error) {
-      setSending(false);
-      console.error(error);
-    }
+    //   const data = await response.json();
+    //   console.log('data', data);
+
+
+    //   setSending(false);
+    //   closeModalHandler();
+    // } catch (error) {
+    //   setSending(false);
+    //   console.error(error);
+    // }
   }
 
   const buildRadioButtons = () => {
