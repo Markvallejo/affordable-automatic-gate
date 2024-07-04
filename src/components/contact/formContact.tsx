@@ -121,33 +121,33 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
 
     const newData = formatCurrentData(formData)
 
-    // try {
-    //   const response = await fetch('/api/send-email', {
-    //     method: "POST",
-    //     headers: {
-    //       "Access-Control-Allow-Origin": "*",
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       from: 'Acme <onboarding@resend.dev>',
-    //       to: emailTo,
-    //       subject: 'New estimate request',
-    //       html: newData.html,
-    //       text: newData.text,
-    //     }),
-    //   });
+    try {
+      const response = await fetch('/api/send-email', {
+        method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: 'Acme <onboarding@resend.dev>',
+          to: emailTo,
+          subject: 'New estimate request',
+          html: newData.html,
+          text: newData.text,
+        }),
+      });
   
-    //   const data = await response.json();
-    //   if (data) {
-    //     console.log("data--> ", data);
-    //   }
+      const data = await response.json();
+      if (data) {
+        console.log("data--> ", data);
+      }
 
-    //   setSending(false);
-    //   closeModalHandler();
-    // } catch (error) {
-    //   setSending(false);
-    //   console.error(error);
-    // }
+      setSending(false);
+      closeModalHandler();
+    } catch (error) {
+      setSending(false);
+      console.error(error);
+    }
   }
 
   const buildRadioButtons = () => {

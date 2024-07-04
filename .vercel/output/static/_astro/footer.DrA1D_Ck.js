@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime.D5qyYPMi.js";import"./index.CZlPm10g.js";const o=()=>r.jsxs("div",{className:"footer-wrapper",children:[r.jsx("p",{children:"2024 West Tidwell Rd Houston, TX 77091"}),r.jsxs("p",{children:[r.jsx("strong",{children:"Mario-gateman"}),"@sbcglobal.net"]})]});export{o as default};
