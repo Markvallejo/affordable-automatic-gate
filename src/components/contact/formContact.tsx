@@ -129,7 +129,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: 'Acme <onboarding@resend.dev>',
+          from: 'Affordable Automatic Gate <onboarding@resend.dev>',
           to: emailTo,
           subject: 'New estimate request',
           html: newData.html,
