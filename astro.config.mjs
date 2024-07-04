@@ -9,8 +9,8 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [react(), sitemap(), robotsTxt()],
   site: (import.meta.env.PUBLIC_SITE_URL || "http://localhost:4321"),
-  output: "hybrid",
-  adapter: node({
-    mode: "standalone"
-  }),
+  // output: "hybrid",
+  // adapter: node({
+  //   mode: "standalone"
+  // }),
 });
