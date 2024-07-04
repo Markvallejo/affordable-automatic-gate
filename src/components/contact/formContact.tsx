@@ -122,7 +122,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     const newData = formatCurrentData(formData)
 
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('/api/send-email', {
         method: "POST",
         headers: {
           "Access-Control-Allow-Origin": "*",
