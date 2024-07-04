@@ -2,10 +2,6 @@
   "name": "affordable-automatic-gate",
   "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": "v20.15.0",
-    "npm": "10.7.0"
-  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
