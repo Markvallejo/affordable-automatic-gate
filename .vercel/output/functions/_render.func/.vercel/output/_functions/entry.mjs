@@ -1,7 +1,7 @@
 import { renderers } from './renderers.mjs';
-import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, m as manifest } from './chunks/_@astrojs-manifest_C3JP6YsK.mjs';
+import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, m as manifest } from './chunks/_@astrojs-manifest_C1-OhsQN.mjs';
 import { A as AstroError, i as i18nNoLocaleFoundInPath, f as appendForwardSlash, j as joinPaths, R as ResponseSentError, g as MiddlewareNoDataOrNextCalled, h as MiddlewareNotAResponse, G as GetStaticPathsRequired, k as InvalidGetStaticPathsReturn, l as InvalidGetStaticPathsEntry, m as GetStaticPathsExpectedParams, n as GetStaticPathsInvalidRouteParam, t as trimSlashes, P as PageNumberParamNotFound, o as NoMatchingStaticPathFound, p as PrerenderDynamicEndpointPathCollide, q as ReservedSlotName, L as LocalsNotAnObject, r as PrerenderClientAddressNotAvailable, C as ClientAddressNotAvailable, S as StaticClientAddressNotAvailable, s as RewriteWithBodyUsed, u as AstroResponseHeadersReassigned, v as fileExtension, w as slash, x as prependForwardSlash, y as removeTrailingForwardSlash } from './chunks/astro/assets-service_LSOKjKXA.mjs';
-import { R as ROUTE_TYPE_HEADER, a as REROUTE_DIRECTIVE_HEADER, D as DEFAULT_404_COMPONENT, r as renderSlotToString, b as renderJSX, c as chunkToString, i as isRenderInstruction, d as clientLocalsSymbol, e as clientAddressSymbol$1, f as renderPage, g as renderEndpoint, A as ASTRO_VERSION, h as responseSentSymbol$1, j as REROUTABLE_STATUS_CODES } from './chunks/astro/server_RA9XIgWt.mjs';
+import { R as ROUTE_TYPE_HEADER, a as REROUTE_DIRECTIVE_HEADER, D as DEFAULT_404_COMPONENT, r as renderSlotToString, b as renderJSX, c as chunkToString, i as isRenderInstruction, d as clientLocalsSymbol, e as clientAddressSymbol$1, f as renderPage, g as renderEndpoint, A as ASTRO_VERSION, h as responseSentSymbol$1, j as REROUTABLE_STATUS_CODES } from './chunks/astro/server_CRwyTHBL.mjs';
 import { serialize, parse } from 'cookie';
 import 'html-escaper';
 import 'clsx';
@@ -472,7 +472,7 @@ const astroCookiesSymbol = Symbol.for("astro.cookies");
 function attachCookiesToResponse(response, cookies) {
   Reflect.set(response, astroCookiesSymbol, cookies);
 }
-function getFromResponse(response) {
+function getCookiesFromResponse(response) {
   let cookies = Reflect.get(response, astroCookiesSymbol);
   if (cookies != null) {
     return cookies;
@@ -481,7 +481,7 @@ function getFromResponse(response) {
   }
 }
 function* getSetCookiesFromResponse(response) {
-  const cookies = getFromResponse(response);
+  const cookies = getCookiesFromResponse(response);
   if (!cookies) {
     return [];
   }
@@ -1246,6 +1246,7 @@ class RenderContext {
     const lastNext = async (ctx, payload) => {
       if (payload) {
         if (this.pipeline.manifest.rewritingEnabled) {
+          pipeline.logger.debug("router", "Called rewriting to:", payload);
           const [routeData, component] = await pipeline.tryRewrite(
             payload,
             this.request,
@@ -1254,8 +1255,9 @@ class RenderContext {
           this.routeData = routeData;
           componentInstance = component;
           this.isRewriting = true;
+          this.status = 200;
         } else {
-          this.pipeline.logger.warn(
+          this.pipeline.logger.error(
             "router",
             "The rewrite API is experimental. To use this feature, add the `rewriting` flag to the `experimental` object in your Astro config."
           );
@@ -1294,7 +1296,7 @@ class RenderContext {
           return new Response(null, { status: 500, headers: { [ROUTE_TYPE_HEADER]: "fallback" } });
         }
       }
-      const responseCookies = getFromResponse(response2);
+      const responseCookies = getCookiesFromResponse(response2);
       if (responseCookies) {
         cookies.merge(responseCookies);
       }
@@ -1320,30 +1322,47 @@ class RenderContext {
       getActionResult: createGetActionResult(context.locals)
     });
   }
+  async #executeRewrite(reroutePayload) {
+    this.pipeline.logger.debug("router", "Calling rewrite: ", reroutePayload);
+    if (!this.pipeline.manifest.rewritingEnabled) {
+      this.pipeline.logger.error(
+        "router",
+        "The rewrite API is experimental. To use this feature, add the `rewriting` flag to the `experimental` object in your Astro config."
+      );
+      return new Response(
+        "The rewrite API is experimental. To use this feature, add the `rewriting` flag to the `experimental` object in your Astro config.",
+        {
+          status: 500,
+          statusText: "The rewrite API is experimental. To use this feature, add the `rewriting` flag to the `experimental` object in your Astro config."
+        }
+      );
+    }
+    const [routeData, component, newURL] = await this.pipeline.tryRewrite(
+      reroutePayload,
+      this.request,
+      this.originalRoute
+    );
+    this.routeData = routeData;
+    if (reroutePayload instanceof Request) {
+      this.request = reroutePayload;
+    } else {
+      this.request = this.#copyRequest(newURL, this.request);
+    }
+    this.url = new URL(this.request.url);
+    this.cookies = new AstroCookies(this.request);
+    this.params = getParams(routeData, this.url.pathname);
+    this.pathname = this.url.pathname;
+    this.isRewriting = true;
+    this.status = 200;
+    return await this.render(component);
+  }
   createActionAPIContext() {
     const renderContext = this;
     const { cookies, params, pipeline, url } = this;
     const generator = `Astro v${ASTRO_VERSION}`;
     const redirect = (path, status = 302) => new Response(null, { status, headers: { Location: path } });
     const rewrite = async (reroutePayload) => {
-      pipeline.logger.debug("router", "Called rewriting to:", reroutePayload);
-      const [routeData, component, newURL] = await pipeline.tryRewrite(
-        reroutePayload,
-        this.request,
-        this.originalRoute
-      );
-      this.routeData = routeData;
-      if (reroutePayload instanceof Request) {
-        this.request = reroutePayload;
-      } else {
-        this.request = this.#copyRequest(newURL, this.request);
-      }
-      this.url = newURL;
-      this.cookies = new AstroCookies(this.request);
-      this.params = getParams(routeData, this.url.pathname);
-      this.isRewriting = true;
-      this.pathname = this.url.pathname;
-      return await this.render(component);
+      return await this.#executeRewrite(reroutePayload);
     };
     return {
       cookies,
@@ -1486,24 +1505,7 @@ class RenderContext {
       return new Response(null, { status, headers: { Location: path } });
     };
     const rewrite = async (reroutePayload) => {
-      pipeline.logger.debug("router", "Calling rewrite: ", reroutePayload);
-      const [routeData, component, newURL] = await pipeline.tryRewrite(
-        reroutePayload,
-        this.request,
-        this.originalRoute
-      );
-      this.routeData = routeData;
-      if (reroutePayload instanceof Request) {
-        this.request = reroutePayload;
-      } else {
-        this.request = this.#copyRequest(newURL, this.request);
-      }
-      this.url = new URL(this.request.url);
-      this.cookies = new AstroCookies(this.request);
-      this.params = getParams(routeData, this.url.pathname);
-      this.pathname = this.url.pathname;
-      this.isRewriting = true;
-      return await this.render(component);
+      return await this.#executeRewrite(reroutePayload);
     };
     return {
       generator: astroStaticPartial.generator,
@@ -2432,7 +2434,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "64f27ef3-0734-4324-a878-958e9d566257",
+    "middlewareSecret": "75c5e907-9bc9-45de-96fd-b594854201fb",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

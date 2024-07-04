@@ -1,17 +1,6 @@
 import { Resend } from 'resend';
 
 const resend = new Resend({"BASE_URL": "/", "MODE": "production", "DEV": false, "PROD": true, "SSR": true, "SITE": "http://localhost:4321", "ASSETS_PREFIX": undefined}.RESEND_API_KEY);
-const GET = async () => {
-  return new Response(
-    JSON.stringify({
-      message: "Hello World"
-    }),
-    {
-      status: 200,
-      statusText: "OK"
-    }
-  );
-};
 const POST = async ({ request }) => {
   const body = await request.json();
   const { to, from, html, subject, text } = body;
@@ -51,4 +40,4 @@ const POST = async ({ request }) => {
   }
 };
 
-export { GET, POST };
+export { POST };

@@ -4,7 +4,7 @@ import { escape } from 'html-escaper';
 import { clsx } from 'clsx';
 import 'cssesc';
 
-const ASTRO_VERSION = "4.11.0";
+const ASTRO_VERSION = "4.11.5";
 const REROUTE_DIRECTIVE_HEADER = "X-Astro-Reroute";
 const ROUTE_TYPE_HEADER = "X-Astro-Route-Type";
 const DEFAULT_404_COMPONENT = "astro-default-404.astro";
@@ -1813,8 +1813,17 @@ async function renderPage(result, componentFactory, props, children, streaming, 
   if (route?.component.endsWith(".md")) {
     headers.set("Content-Type", "text/html; charset=utf-8");
   }
-  const response = new Response(body, { ...init, headers });
-  return response;
+  let status = init.status;
+  if (route?.route === "/404") {
+    status = 404;
+  } else if (route?.route === "/500") {
+    status = 500;
+  }
+  if (status) {
+    return new Response(body, { ...init, headers, status });
+  } else {
+    return new Response(body, { ...init, headers });
+  }
 }
 
 "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);
