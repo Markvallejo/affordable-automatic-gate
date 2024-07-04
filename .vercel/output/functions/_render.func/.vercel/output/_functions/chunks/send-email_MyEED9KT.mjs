@@ -1,60 +1,54 @@
-import type { APIRoute } from "astro";
-import { Resend } from "resend";
+import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
-// cretae a get method to test the api
-export const GET: APIRoute = async () => {
+const resend = new Resend({"BASE_URL": "/", "MODE": "production", "DEV": false, "PROD": true, "SSR": true, "SITE": "http://localhost:4321", "ASSETS_PREFIX": undefined}.RESEND_API_KEY);
+const GET = async () => {
   return new Response(
     JSON.stringify({
-      message: "Hello World",
+      message: "Hello World"
     }),
     {
       status: 200,
-      statusText: "OK",
+      statusText: "OK"
     }
   );
 };
-
-export const POST: APIRoute = async ({ request }) => {
+const POST = async ({ request }) => {
   const body = await request.json();
   const { to, from, html, subject, text } = body;
-
   if (!to || !from || !html || !subject || !text) {
     return new Response(null, {
       status: 404,
-      statusText: "Did not provide the right data",
+      statusText: "Did not provide the right data"
     });
   }
-
   try {
     const send = await resend.emails.send({
       from,
       to,
       subject,
       html,
-      text,
+      text
     });
-
     return new Response(
       JSON.stringify({
-        message: send.data,
+        message: send.data
       }),
       {
         status: 200,
-        statusText: "OK",
+        statusText: "OK"
       }
     );
-
-  } catch (error: any) { 
+  } catch (error) {
     return new Response(
       JSON.stringify({
-        message: error.message,
+        message: error.message
       }),
       {
         status: 500,
-        statusText: "Internal Server Error",
+        statusText: "Internal Server Error"
       }
     );
   }
 };
+
+export { GET, POST };
