@@ -3,6 +3,19 @@ import { Resend } from "resend";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
+// cretae a get method to test the api
+export const GET: APIRoute = async () => {
+  return new Response(
+    JSON.stringify({
+      message: "Hello World",
+    }),
+    {
+      status: 200,
+      statusText: "OK",
+    }
+  );
+};
+
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
   const { to, from, html, subject, text } = body;
