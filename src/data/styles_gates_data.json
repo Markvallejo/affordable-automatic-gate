@@ -83,6 +83,10 @@
       {
         "image": "/assets/gallery/4runner_05.jpg",
         "alt": "Runner 5"
+      },
+      {
+        "image": "/assets/gallery/4runner_06.jpg",
+        "alt": "Runner 6"
       }
     ]
   },
