@@ -52,6 +52,14 @@
   text-align: left;
   text-wrap: balance;
 }
+.form-contact__option p:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.form-contact__option p span {
+  font-size: 14px;
+  font-weight: 400;
+}
 
 @media screen and (min-width: 768px) {
   .form-contact__wrapper {

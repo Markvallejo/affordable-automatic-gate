@@ -31,6 +31,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     pointsAndCaps: '',
     centerDesign: '',
     customDesign: '',
+    reparationOnly: '',
     comments: ''
   });
   const [errors, setErrors] = React.useState({
@@ -85,6 +86,13 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   }
   const hanndleCustomDesign = (name: string) => (value: string)  => {
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  }
+
+  const hanndleReparationOnly = (name: string) => (value: string) => { 
     setFormData(prevData => ({
       ...prevData,
       [name]: value
@@ -164,6 +172,12 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
         <div className={`${classNameId}__option`}>
           <p>Custom design:</p>
           <RadioButtons name="customDesign" options={yesNoOptions} onChange={hanndleCustomDesign('customDesign')} />
+        </div>
+        <div className={`${classNameId}__option`}>
+          <p>Reparation only:
+            <span>(Describe in comments)</span>
+          </p>
+          <RadioButtons name="reparationOnly" options={yesNoOptions} onChange={hanndleReparationOnly('reparationOnly')} />
         </div>
     </div>
     )
