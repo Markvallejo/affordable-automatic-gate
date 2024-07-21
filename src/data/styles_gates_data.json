@@ -172,19 +172,6 @@
         "alt": "Center Designs 4"
       },
       {
-        "image": "/assets/gallery/center_05.jpg",
-        "alt": "Center Designs 5"
-      }
-    ]
-  },
-  {
-    "image": "/assets/grid-gates/home_style_fence_only.jpg",
-    "title" : "Fence Only",
-    "description": "<p><strong>Same styles</strong> as you see in our gates.</p>",
-    "details": "<p>Discover the same superior <strong>quality materials</strong> and styles in our fences as you see in our gates.</p>",
-    "icon": "/assets/grid-gates/icon_fence_only.png",
-    "gallery": [
-      {
         "image": "/assets/gallery/fence_01.jpg",
         "alt": "Fence Only 1"
       },
@@ -197,41 +184,12 @@
         "alt": "Fence Only 3"
       },
       {
-        "image": "/assets/gallery/fence_04.jpg",
-        "alt": "Fence Only 4"
-      },
-      {
-        "image": "/assets/gallery/fence_05.jpg",
-        "alt": "Fence Only 5"
-      }
-    ]
-  },
-  {
-    "image": "/assets/grid-gates/home_style_brick_work.jpg",
-    "title" : "Brick work",
-    "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>",
-    "details": "<p>Change your metal post for a <strong>beautiful and strong</strong> brick column and brick signs.</p>",
-    "icon": "/assets/grid-gates/icon_brick_work.png",
-    "gallery": [
-      {
         "image": "/assets/gallery/brick_01.jpg",
         "alt": "Brick Work 1"
       },
       {
         "image": "/assets/gallery/brick_02.jpg",
         "alt": "Brick Work 2"
-      },
-      {
-        "image": "/assets/gallery/brick_03.jpg",
-        "alt": "Brick Work 3"
-      },
-      {
-        "image": "/assets/gallery/brick_04.jpg",
-        "alt": "Brick Work 4"
-      },
-      {
-        "image": "/assets/gallery/brick_05.jpg",
-        "alt": "Brick Work 5"
       }
     ]
   }

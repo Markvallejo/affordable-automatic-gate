@@ -2,6 +2,7 @@ import "@/styles/stylesGates/stylesGates.css";
 import CardGates from "./cardGates";
 
 import gatesData from '@/data/styles_gates_data.json';
+import Gallery from "../gallery/gallery";
 
 interface GridGateProps { 
  
@@ -49,3 +50,21 @@ const StylesGates = ({  } : GridGateProps ) => {
 };
 
 export default StylesGates;
+
+
+
+// Gallery deleted from the code
+// {
+//   "image": "/assets/grid-gates/home_style_fence_only.jpg",
+//   "title" : "Fence Only",
+//   "description": "<p><strong>Same styles</strong> as you see in our gates.</p>",
+//   "details": "<p>Discover the same superior <strong>quality materials</strong> and styles in our fences as you see in our gates.</p>",
+//   "icon": "/assets/grid-gates/icon_fence_only.png"
+// },
+// {
+//   "image": "/assets/grid-gates/home_style_brick_work.jpg",
+//   "title" : "Brick work",
+//   "description": "<p>Beautiful and <strong>strong</strong> columns and signs.</p>",
+//   "details": "<p>Change your metal post for a <strong>beautiful and strong</strong> brick column and brick signs.</p>",
+//   "icon": "/assets/grid-gates/icon_brick_work.png"
+// }
