@@ -23,7 +23,7 @@
 .technical-gates__subtitle-text {
   color: var(--color-white);
   font-size: 16px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -40,7 +40,7 @@
 }
 .technical-gates__description {
   font-size: 16px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
   line-height: 1.5;
   margin-bottom: 16px;
 }

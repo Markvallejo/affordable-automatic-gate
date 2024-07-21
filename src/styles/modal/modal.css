@@ -24,7 +24,7 @@
     color: var(--color-white);
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.3px;
     line-height: 1;
   }
   .modal__overlayBtn {

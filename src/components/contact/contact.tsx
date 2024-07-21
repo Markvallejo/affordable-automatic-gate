@@ -60,10 +60,7 @@ const ContactGates = () => {
             </div>
           </div>
           <div className={`${classNameId}__container-map`}>
-            <a
-              href="https://www.google.com.mx/maps/@25.4083072,-101.0168044,14z"
-              target="_blank"
-            >
+            <a href="https://www.google.com/maps/place/29.8477622,-95.4410205/@29.8477622,-95.4410205,18z" target="_blank">
               <img src="/assets/contact/contact_map.png" alt="location" />
             </a>
           </div>

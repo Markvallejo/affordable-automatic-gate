@@ -1,8 +1,10 @@
 .header-wrapper {
   background-color: var(--color-black);
-  height: 80px;
+  height: 100px;
   padding: 20px;
+  position: fixed;
   width: 100%;
+  z-index: 10;
 }
 .header-container {
   align-items: center;
@@ -22,14 +24,14 @@
 .text-container h1 {
   font-size: 21px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.2px;
   line-height: 1;
 }
 .text-container p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
 }
 .hamburger-button--container {
   height: auto;

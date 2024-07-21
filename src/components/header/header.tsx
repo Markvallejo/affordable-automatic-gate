@@ -1,9 +1,44 @@
-import { useState } from "react";
-import "@/styles/header/header.css";
+import { useState, useEffect } from "react";
 import Modal from "../modal/modal";
 import Menu from "../menu/menu";
+import "@/styles/header/header.css";
 
 const Header = () => {
+
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  const [headerStyle, setHeaderStyle] = useState({
+    transform: 'translateY(0)',
+    transition: 'transform 0.3s ease-out',
+  });
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollY;
+
+      if (scrollDifference < -10) { // Scroll hacia arriba de más de 10px
+        setHeaderStyle({
+          transform: 'translateY(0)',
+          transition: 'transform 0.3s ease-out',
+        });
+        setIsHeaderVisible(true);
+      } else if (scrollDifference > 10 && isHeaderVisible) { // Scroll hacia abajo de más de 10px
+        setHeaderStyle({
+          transform: 'translateY(-100%)',
+          transition: 'transform 0.3s ease-in',
+        });
+        setIsHeaderVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY, isHeaderVisible]);
 
   const [modalOpen, setModalOpen] = useState(false);
   const handleMenu = () => {
@@ -15,7 +50,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="header-wrapper">
+      <div className="header-wrapper" style={headerStyle}>
         <div className="header-container">
           <div className="text-container">
             <h1 className="header">Affordable Automatic Gate</h1>

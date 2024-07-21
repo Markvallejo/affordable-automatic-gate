@@ -11,7 +11,7 @@
 .contact-gates__title {
   color: var(--color-white);
   font-size: 16px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -44,7 +44,7 @@
   color: var(--color-white);
   font-weight: 500;
   font-size: 40px;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.2px;
   line-height: 1;
 }
 .contact-gates__container-right__title strong {
@@ -52,13 +52,13 @@
 }
 .contact-gates__description {
   font-size: 16px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
   line-height: 1.5;
   margin-bottom: 5px;
 }
 .contact-gates__text-contact {
   font-size: 20px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.3px;
   line-height: 1.5;
 }
 .contact-gates__text-contact a {
