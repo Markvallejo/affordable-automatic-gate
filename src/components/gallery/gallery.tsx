@@ -1,5 +1,5 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
 import galleryData from '@/data/styles_gates_data.json';
@@ -14,7 +14,7 @@ interface GalleryProps {
 const Gallery = ({ currentIndex } : GalleryProps) => {
   const classNameId = "gallery";
   const data = galleryData;
-  const parentSwiperRef = React.useRef(null);
+  const parentSwiperRef = React.useRef<SwiperRef>(null);
   const childSwiperRef = React.useRef(null);
 
   const buildGalleryItem = (image: string, alt: string,) => { 

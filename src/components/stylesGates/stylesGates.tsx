@@ -2,7 +2,6 @@ import "@/styles/stylesGates/stylesGates.css";
 import CardGates from "./cardGates";
 
 import gatesData from '@/data/styles_gates_data.json';
-import Gallery from "../gallery/gallery";
 
 interface GridGateProps { 
  
