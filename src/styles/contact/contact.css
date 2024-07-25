@@ -66,11 +66,23 @@
   transition: all 0.3s ease-in-out;
 }
 .contact-gates__link-form {
+  color: var(--color-black);
   font-size: 18px;
   font-weight: 700;
   text-decoration: underline;
   cursor: pointer;
   margin-bottom: 5px;
+  -webkit-tap-highlight-color: transparent
+}
+.contact-gates__link-form:link,
+.contact-gates__link-form:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+.contact-gates__link-form:hover,
+.contact-gates__link-form:active {
+  color: inherit;
+  text-decoration: underline;
 }
 .contact-gates__container-map {
   border-radius: 10px;

@@ -26,6 +26,7 @@ const Cover = () => {
           disableOnInteraction: false,
         }}
       >
+        <div className="cover-card-gradient" />
         {imagesData.map((image, index) => (
           <SwiperSlide key={index}>
             <ImageCard src={image.src} alt={image.alt} currentIndex={index} />
