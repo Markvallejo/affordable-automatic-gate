@@ -11,6 +11,7 @@
 .styles-gates__image-title-container {
   align-items: center;
   display: flex;
+  gap: 25px;
   justify-content: space-between;
   margin-bottom: 20px;
 }

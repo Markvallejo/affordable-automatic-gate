@@ -33,7 +33,7 @@
   font-size: 40px;
   line-height: 1;
   margin-bottom: 10px;
-
+  max-width: calc(100% - 25px);
 }
 .technical-gates__title strong {
   font-weight: 700;
@@ -43,9 +43,11 @@
   letter-spacing: -0.3px;
   line-height: 1.5;
   margin-bottom: 16px;
+  max-width: calc(100% - 25px);
 }
 .align-right {
   text-align: right;
+  margin-left: 25px;
 }
 .technical-gates__image-container {
   height: auto;

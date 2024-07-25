@@ -19,11 +19,11 @@
   width: 100%;
 }
 .card-gates__text-container {
-  padding: 20px 10px 15px 10px;
+  padding: 20px 8px 15px 8px;
 }
 .card-gates__text-container h3 {
   color: var(--color-white);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   margin-bottom: 5px;
 }

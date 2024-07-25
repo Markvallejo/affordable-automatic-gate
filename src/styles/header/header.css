@@ -1,7 +1,7 @@
 .header-wrapper {
   background-color: var(--color-black);
-  height: 100px;
-  padding: 20px;
+  height: 90px;
+  padding: 20px 10px;
   position: fixed;
   width: 100%;
   z-index: 10;

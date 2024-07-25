@@ -1,6 +1,6 @@
 .cover-container {
   min-height: 500px;
-  padding-top: 100px;
+  padding-top: 90px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -29,6 +29,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .cover-container {
+    padding-top: 100px;
+  }
   .cover-description-container {
     margin-top: 40px;
     padding: 0 40px;
