@@ -30,6 +30,7 @@
 .styles-gates__title-container h2  {
   font-weight: 500;
   font-size: 40px;
+  letter-spacing: -0.5px;
 }
 .styles-gates__title-container h2 strong {
   font-weight: 700;
@@ -39,6 +40,8 @@
   font-weight: 400;
   letter-spacing: -0.3px;
   line-height: 1.5;
+  margin-left: auto;
+  max-width: calc(100% - 50px);
   text-align: right;
 }
 .styles-gates__grid-cards {

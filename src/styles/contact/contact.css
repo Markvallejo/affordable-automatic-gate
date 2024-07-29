@@ -44,7 +44,7 @@
   color: var(--color-white);
   font-weight: 500;
   font-size: 40px;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.5px;
   line-height: 1;
 }
 .contact-gates__container-right__title strong {
@@ -55,9 +55,14 @@
   letter-spacing: -0.3px;
   line-height: 1.5;
   margin-bottom: 5px;
+  margin-left: auto;
+  max-width: calc(100% - 50px);
+}
+.contact-gates__container-left .contact-gates__description {
+  margin-left: 0;
 }
 .contact-gates__text-contact {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: -0.3px;
   line-height: 1.5;
 }
@@ -67,6 +72,7 @@
 }
 .contact-gates__link-form {
   color: var(--color-black);
+  font-family: 'KantumruyPro', sans-serif;
   font-size: 18px;
   font-weight: 700;
   text-decoration: underline;

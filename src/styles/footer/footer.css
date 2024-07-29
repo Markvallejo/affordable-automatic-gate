@@ -12,6 +12,7 @@
 .footer-wrapper p {
   color: var(--color-white);
   font-size: 18px;
+  letter-spacing: -0.3px;
   margin: 0;
   text-align: center;
 }
