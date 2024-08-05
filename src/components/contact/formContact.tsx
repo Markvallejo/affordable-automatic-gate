@@ -39,7 +39,7 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
   const  stylezOptions =  [ 
     { value: 'Affordable', label: 'Affordable'},
     { value: 'Ranch', label: 'Ranch'},
-    { value: '4 runner', label: '4 Runner'},
+    { value: '4 Runner', label: '4 Runner'},
     { value: 'Doggy style', label: 'Doggy style'},
     { value: 'Contemporary', label: 'Contemporary'},
     { value: 'Fence only', label: 'Fence only'},
@@ -154,9 +154,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     setSending(true);
 
     const newData = formatCurrentData(formData)
-
-
-    console.log('formData-->', newData);
 
     try {
       const response = await fetch('/api/send-email', {
