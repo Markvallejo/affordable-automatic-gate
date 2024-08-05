@@ -3,6 +3,7 @@ import "@/styles/contact/formContact.css";
 import InputText from "../common/inpus/inputsText";
 import RadioButtons from "../common/radioButtons/radioButtons";
 import GreenButton from "../common/buttons/greenButton";
+import Dropdown from "../common/dropdown/dropdown";
 
 interface FormContactProps {
   closeModalHandler: () => void;
@@ -34,6 +35,31 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     reparationOnly: '',
     comments: ''
   });
+
+  const  stylezOptions =  [ 
+    { value: 'Affordable', label: 'Affordable'},
+    { value: 'Ranch', label: 'Ranch'},
+    { value: '4 runner', label: '4 Runner'},
+    { value: 'Doggy style', label: 'Doggy style'},
+    { value: 'Contemporary', label: 'Contemporary'},
+    { value: 'Fence only', label: 'Fence only'},
+    { value: 'Brick work', label: 'Brick work'},
+    { value: 'Other', label: 'Other'},
+  ];
+  const gateOperatorOptions = [
+    { value: 'Electric line', label: 'Electric line'},
+    { value: 'Solar-battery', label: 'Solar-battery'}
+  ];
+  const openingSystemOptions = [
+    { value: 'Single swing', label: 'Single swing'},
+    { value: 'Double swing', label: 'Double swing'},
+    { value: 'Slider', label: 'Slider'}
+  ];
+  const colorOptions = [
+    { value: 'Black', label: 'Black'},
+    { value: 'Other', label: 'Other'},
+  ];
+
   const [errors, setErrors] = React.useState({
     name: '',
     phone: '',
@@ -129,6 +155,9 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
 
     const newData = formatCurrentData(formData)
 
+
+    console.log('formData-->', newData);
+
     try {
       const response = await fetch('/api/send-email', {
         method: "POST",
@@ -183,6 +212,35 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     )
   }
 
+  const handleSelectStyle = (option: { value: string; label: string }) => {
+    setFormData(prevData => ({
+      ...prevData,
+      style: option.value
+    }));
+  };
+
+  const handleSelectGateOperator = (option: { value: string; label: string }) => {
+    setFormData(prevData => ({
+      ...prevData,
+      gateOpener: option.value
+    }));
+  }
+
+  const handleSelectOpeningSystem = (option: { value: string; label: string }) => {
+    setFormData(prevData => ({
+      ...prevData,
+      openingStyle: option.value
+    }));
+  }
+
+  const handleSelectColor = (option: { value: string; label: string }) => {
+    setFormData(prevData => ({
+      ...prevData,
+      color: option.value
+    }));
+  }
+
+
   return (
     <div className={`${classNameId}__wrapper`}>
       <div className={`${classNameId}__title-form-container`}>
@@ -229,13 +287,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
           <br />
           <InputText
             error=""
-            label="Style" 
-            name="style"
-            onChange={handleInputChange}
-            placeholder="Style of gate"
-          />
-          <InputText
-            error=""
             label="Gate length (ft)" 
             name="gateLength"
             onChange={handleInputChange}
@@ -248,27 +299,38 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
             onChange={handleInputChange}
             placeholder="Length of fence"
           />
-          <InputText
-            error=""
-            label="Opening style" 
-            name="openingStyle"
-            onChange={handleInputChange}
-            placeholder="Style of opening"
-          />
-          <InputText
-            error=""
-            label="Gate opener" 
-            name="gateOpener"
-            onChange={handleInputChange}
-            placeholder="Type of gate opener"
-          />
-          <InputText
-            error=""
-            label="Color" 
-            name="color"
-            onChange={handleInputChange}
-            placeholder="Color of gate"
-          />
+          <div className={`${classNameId}__container-dropdown`} >
+            <p>Style:</p>
+            <Dropdown 
+              options={stylezOptions} 
+              onSelect={handleSelectStyle} 
+              placeholder="Style of gate" 
+            />
+          </div>
+           <div className={`${classNameId}__container-dropdown`} >
+            <p>Opening style:</p>
+            <Dropdown 
+              options={openingSystemOptions} 
+              onSelect={handleSelectOpeningSystem} 
+              placeholder="Style of opening" 
+            />
+          </div>
+          <div className={`${classNameId}__container-dropdown`} >
+            <p>Gate opener:</p>
+            <Dropdown 
+              options={gateOperatorOptions} 
+              onSelect={handleSelectGateOperator} 
+              placeholder="Type of gate opener" 
+            />
+          </div>
+          <div className={`${classNameId}__container-dropdown`} >
+            <p>Color:</p>
+            <Dropdown 
+              options={colorOptions} 
+              onSelect={handleSelectColor} 
+              placeholder="Color of gate" 
+            />
+          </div>
           <InputText
             error=""
             label="Brick work" 
