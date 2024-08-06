@@ -1,7 +1,7 @@
 .header-wrapper {
   background-color: var(--color-black);
-  height: 90px;
-  padding: 20px 10px;
+  height: 70px;
+  padding: 10px 10px;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -19,7 +19,7 @@
   color: var(--color-white);
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 5px;
 }
 .text-container h1 {
   font-size: 21px;
