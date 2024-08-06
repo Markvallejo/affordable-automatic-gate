@@ -67,17 +67,14 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
   });
 
   const pointsAndCapsOptions: Option[] = [
-    { value: 'sharp', label: '', 
+    { value: 'Sharp', label: '', 
       // icon: <SharpIcon /> 
     },
-    { value: 'round', label: '', 
+    { value: 'Round', label: '', 
       // icon: <RoundIcon /> 
     },
-    { value: 'flat', label: '', 
+    { value: 'Other', label: '', 
       // icon: <FlatIcon /> 
-    },
-    { value: 'ball', label: '', 
-      // icon: <BallIcon /> 
     },
   ];
 
@@ -97,7 +94,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
       [name]: ''
     }));
   };
-
 
   const hanndlePointsAndCaps = (name: string) => (value: string)  => {
     setFormData(prevData => ({
@@ -184,31 +180,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }
   }
 
-  const buildRadioButtons = () => {
-    return  (
-      <div className={`${classNameId}__container-options`}>
-        <div className={`${classNameId}__option`} >
-          <p>Points and caps:</p>
-          <RadioButtons name="pointsAndCaps" options={pointsAndCapsOptions} onChange={hanndlePointsAndCaps('pointsAndCaps')} />
-        </div>
-        <div className={`${classNameId}__option`}>
-          <p>Center design:</p>
-          <RadioButtons name="centerDesign" options={yesNoOptions} onChange={hanndleCenterDesign('centerDesign')} />
-        </div>
-        <div className={`${classNameId}__option`}>
-          <p>Custom design:</p>
-          <RadioButtons name="customDesign" options={yesNoOptions} onChange={hanndleCustomDesign('customDesign')} />
-        </div>
-        <div className={`${classNameId}__option`}>
-          <p>Reparation only:
-            <span>(Describe in comments)</span>
-          </p>
-          <RadioButtons name="reparationOnly" options={yesNoOptions} onChange={hanndleReparationOnly('reparationOnly')} />
-        </div>
-    </div>
-    )
-  }
-
   const handleSelectStyle = (option: { value: string; label: string }) => {
     setFormData(prevData => ({
       ...prevData,
@@ -237,6 +208,37 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
     }));
   }
 
+  const buildRadioButtons = () => {
+    return  (
+      <div className={`${classNameId}__container-options`}>
+        <div className={`${classNameId}__option`} >
+          <p>Points and caps:</p>
+          <div>
+            <div className={`${classNameId}__container-icons`}>
+              <img  className={`${classNameId}__icon-point`}src="/assets/form/sharp.png"  alt="sharp icon" />
+              <img className={`${classNameId}__icon-point`}  src="/assets/form/round.png" alt="round icon" />
+              <p>Other</p>
+            </div>
+            <RadioButtons name="pointsAndCaps" options={pointsAndCapsOptions} onChange={hanndlePointsAndCaps('pointsAndCaps')} />
+          </div>
+        </div>
+        <div className={`${classNameId}__option`}>
+          <p>Center design:</p>
+          <RadioButtons name="centerDesign" options={yesNoOptions} onChange={hanndleCenterDesign('centerDesign')} />
+        </div>
+        <div className={`${classNameId}__option`}>
+          <p>Custom design:</p>
+          <RadioButtons name="customDesign" options={yesNoOptions} onChange={hanndleCustomDesign('customDesign')} />
+        </div>
+        <div className={`${classNameId}__option`}>
+          <p>Reparation only:
+            <span>(Describe in comments)</span>
+          </p>
+          <RadioButtons name="reparationOnly" options={yesNoOptions} onChange={hanndleReparationOnly('reparationOnly')} />
+        </div>
+    </div>
+    )
+  }
 
   return (
     <div className={`${classNameId}__wrapper`}>
