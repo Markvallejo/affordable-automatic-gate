@@ -4,7 +4,7 @@ import '@/styles/form/radioButtons.css';
 interface Option {
   value: string;
   label: string;
-  icon?: React.ReactNode;
+  icon?: string
 }
 
 interface RadioButtonsProps {
@@ -34,11 +34,10 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({ name, options, onChange }) 
             className="radio-input"
           />
           <span className="radio-custom">
-            {option.icon ? option.icon : (
-              <span className={`radio-circle ${selectedValue === option.value ? 'selected' : ''}`} />
-            )}
+            <span className={`radio-circle ${selectedValue === option.value ? 'selected' : ''}`} />
           </span>
-          <span className="radio-label">{option.label}</span>
+          {option.icon && <img src={option.icon} alt={option.label} className="radio-icon" />}
+          {option.label && <span className="radio-label">{option.label}</span>} 
         </label>
       ))}
     </div>

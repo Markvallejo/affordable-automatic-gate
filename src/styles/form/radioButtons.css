@@ -38,3 +38,8 @@
   .radio-label {
     font-size: 14px;
   }
+
+  .radio-icon {
+    height: 20px;
+    width: auto;
+  }

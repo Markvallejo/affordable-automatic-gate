@@ -11,7 +11,7 @@ interface FormContactProps {
 interface Option {
   value: string;
   label: string;
-  icon?: React.ReactNode;
+  icon?: string;
 }
 
 const FormContact = ({ closeModalHandler }: FormContactProps) => {
@@ -67,14 +67,14 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
   });
 
   const pointsAndCapsOptions: Option[] = [
-    { value: 'Sharp', label: '', 
-      // icon: <SharpIcon /> 
+    { value: 'p25', label: '', 
+      icon: "/assets/form/sharp.png"
     },
-    { value: 'Round', label: '', 
-      // icon: <RoundIcon /> 
+    { value: 'p30', label: '', 
+      icon: "/assets/form/round.png" 
     },
-    { value: 'Other', label: '', 
-      // icon: <FlatIcon /> 
+    { value: 'none', label: 'None', 
+      // icon: "" 
     },
   ];
 
@@ -122,12 +122,20 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
   }
 
   const formatCurrentData = (data: typeof formData) => {
-    let htmlVersion: string  = `<h2>New estimate request</h2>`
-    let textVersion: string = "New estimate request\n\n"
+    let htmlVersion: string  = `<h2>New estimate request from ${formData.name}</h2>`
+    let textVersion: string = `New estimate request from ${formData.name} \n\n`
+  
+    const formatKey = (key: string) => {
+      return key
+        .split(/(?=[A-Z])/)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
   
     Object.entries(data).forEach(([key, value]) => {
-      htmlVersion += `<p><strong>${key}:</strong> ${value}</p>`;
-      textVersion += `${key}: ${value}\n`;
+      const formattedKey = formatKey(key);
+      htmlVersion += `<p><strong>${formattedKey}:</strong> ${value}</p>`;
+      textVersion += `${formattedKey}: ${value}\n`;
     });
   
     return { html: htmlVersion, text: textVersion };
@@ -214,11 +222,6 @@ const FormContact = ({ closeModalHandler }: FormContactProps) => {
         <div className={`${classNameId}__option`} >
           <p>Points and caps:</p>
           <div>
-            <div className={`${classNameId}__container-icons`}>
-              <img  className={`${classNameId}__icon-point`}src="/assets/form/sharp.png"  alt="sharp icon" />
-              <img className={`${classNameId}__icon-point`}  src="/assets/form/round.png" alt="round icon" />
-              <p>Other</p>
-            </div>
             <RadioButtons name="pointsAndCaps" options={pointsAndCapsOptions} onChange={hanndlePointsAndCaps('pointsAndCaps')} />
           </div>
         </div>
