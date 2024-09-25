@@ -17,12 +17,20 @@ const { title, description } = Astro.props as Props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
-		<meta name="description" content={description} />
+		<meta name="title" content={AppConfig.title} />
+		<meta name="description" content={AppConfig.description} />
+		<meta name="image" content={`${AppConfig.url}assets/metas/affordable-automatic-gate-houston-share.webp`}>
+		<meta property="og:type" content="website">
 		<meta name='author' content={AppConfig.author} />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="title" content="Affordable Automatic Gate" />
-    <meta name="description" content="Affordable Automatic Gate" />
-		<link rel="alternate" type="application/rss+xml"  href="/rss.xml" />
+		<meta property="og:title" content={AppConfig.title}>
+    	<meta property="og:url" content={AppConfig.url}>
+		<meta property="og:site_name" content={AppConfig.site_name}>
+		<meta property="og:description" content={AppConfig.description}>
+		<meta property="twitter:url" content={AppConfig.url}>
+		<meta property="twitter:title" content={AppConfig.title}>
+		<meta property="twitter:description" content={AppConfig.description}>
+		<meta property="twitter:image" content={`${AppConfig.url}assets/metas/affordable-automatic-gate-houston-share.webp`}>
+		<link rel="canonical" href={AppConfig.url}>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
