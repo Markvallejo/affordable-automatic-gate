@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), sitemap(), robotsTxt()],
-  site: (import.meta.env.PUBLIC_SITE_URL || "http://localhost:4321"),
+  site: 'https://www.affordableautomaticgatehouston.com/',
   output: 'server',
   adapter: vercel(),
 });
